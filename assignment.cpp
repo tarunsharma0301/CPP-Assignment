@@ -13,21 +13,21 @@ public:
 public:
     void get_details()
     {
-        cout << "Enter name: ";
+        cout << "Enter Name: ";
         cin >> name;
-        cout << "Enter age: ";
+        cout << "Enter Age: ";
         cin >> age;
-        cout << "Enter registration number: ";
+        cout << "Enter Registration Number: ";
         cin >> reg_no;
-        cout << "Enter parentage: ";
+        cout << "Enter Parentage: ";
         cin >> parentage;
-        cout << "Enter semester: ";
+        cout << "Enter Semester: ";
         cin >> semester;
-        cout << "Enter roll number: ";
+        cout << "Enter Roll Number: ";
         cin >> roll_no;
-        cout << "Enter attendance (no of classes attended): ";
+        cout << "Enter Attendance (Classes Attended): ";
         cin >> attendance;
-        cout << "Enter marks in 5 subjects: ";
+        cout << "Enter Marks in 5 subjects: ";
         for (int i = 0; i < 5; i++)
         {
             cin >> marks[i];
@@ -36,7 +36,7 @@ public:
 
     void show_details()
     {
-        cout << "Name: " << name << endl;
+        cout << " Name: " << name << endl;
         cout << " Age: " << age << endl;
         cout << " Reg No: " << reg_no << endl;
         cout << " Parentage: " << parentage << endl;
@@ -80,7 +80,10 @@ public:
         {
             totalMarks = totalMarks + marks[i];
         }
-        percentage = ((totalMarks / 500.0) * 100);
+        percentage = totalMarks / 5;
+    }
+    void show_percentage()
+    {
         if (percentage >= 90)
         {
             cout << "percentage is above 90 %" << endl;
@@ -130,13 +133,11 @@ int main()
 
     for (int i = 0; i < noStudent; i++)
     {
-        cout << "\n"
-             << "Details Of Student :";
-             students[i].cal_percentage();
+        cout << "Details Of Student :" << endl;
+        students[i].cal_percentage();
         students[i].show_details();
-        students[i].show_name();
+        students[i].show_percentage();
         students[i].show_shortage();
-        
     }
 
     students[0].top_5(students, noStudent);
